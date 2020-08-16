@@ -82,6 +82,11 @@ DATABASES = {
     }
 }
 
+LOGIN_REDIRECT_URL = 'home'
+
+LOGOUT_REDIRECT_URL = 'home'
+
+AUTH_USER_MODEL = 'Insta.InstaUser'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
