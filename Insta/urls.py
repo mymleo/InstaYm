@@ -1,9 +1,12 @@
-# app level's urls.py for URLConfs of app
-
 from django.urls import path
 
-from . import views
+from Insta.views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
+
 
 urlpatterns = [
-    path('', views.HelloDjango.as_view()),
+    path('', PostListView.as_view(), name='home'),
+    path('post/<int:pk>/', PostDetailView.as_view(), name='post'),
+    path('post/new/', PostCreateView.as_view(), name='make_post'),
+    path('post/edit/<int:pk>', PostUpdateView.as_view(), name='edit_post'),
+    path('post/delete/<int:pk>', PostDeleteView.as_view(), name='delete_post'),
 ]
